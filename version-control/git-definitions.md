@@ -10,4 +10,4 @@ Instructions:  Define each of the following Git concepts.
  - a commit is when you make a change on a branch, master or another, and you submit it to that branch as a permanent piece of the code. It's kinda of like submitting final edits to a book that will become part of the manuscript.
  A good commit message is active tense, and describes to others what changes or updates were made in the commit, i.e. "add about me paragraph"
 * What is a merge conflict?
-a merge conflict occurs when multiple changes have been made to a specific line of code, and the versions between branches and master are different, and conflict at that exact point. They can be resolved by comparing the conflict and keeping the piece of code that is going to be permanent
+- a merge conflict occurs when multiple changes have been made to a specific line of code, and the versions between branches and master are different, and conflict at that exact point. They can be resolved by comparing the conflict and keeping the piece of code that is going to be permanent
