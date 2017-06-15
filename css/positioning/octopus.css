@@ -1,10 +1,13 @@
-#octopus{
+#octopus {
   display: block;
   margin: auto;
+  width: 200px;
   padding-top: 100px;
 }
 
 #hat {
   position: absolute;
-  top: 30px;
+  width: 100px;
+  padding-left: 40%;
+  padding-top: 20px;
 }
