@@ -1,0 +1,10 @@
+#octopus{
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+}
+
+#hat {
+  position: absolute;
+  top: 30px;
+}
