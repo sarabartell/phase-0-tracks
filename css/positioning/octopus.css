@@ -1,8 +1,10 @@
 #octopus {
   display: block;
   margin: auto;
+  position: relative;
   width: 200px;
   padding-top: 100px;
+  z-index: -1;
 }
 
 #hat {
@@ -10,4 +12,11 @@
   width: 100px;
   padding-left: 40%;
   padding-top: 20px;
+}
+
+#glasses {
+  position: absolute;
+  width: 100px;
+  left: 45%;
+  top: 28%;
 }
