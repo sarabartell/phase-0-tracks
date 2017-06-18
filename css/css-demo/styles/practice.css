@@ -11,6 +11,11 @@
   border-radius: 25px;
 }
 
+#email:hover {
+  background-color: blue;
+  color: white;
+}
+
 .job h3 {
   padding-left: 10px;
 }
@@ -21,4 +26,8 @@
 
 .lists {
   font-size: 0.8em;
+}
+
+section > section {
+  font-family: "Helvetica", sans-serif;
 }
