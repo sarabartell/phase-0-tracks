@@ -1,0 +1,13 @@
+How to use the elevator:
+
+- step into the elevator
+- turn 180 to face the door
+ - move over a foot to the right to face the button pannel besides the door
+ - press number that equals desired floor number
+ - press close door
+
+ - If door opens and incorrect floor number
+   - press close door and wait inside elevator
+
+ - If door opens and desired floor number
+   - exit elevator
