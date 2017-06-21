@@ -19,6 +19,11 @@ def hamster_questionare
 
   puts "what is the estimated age of the hamster?"
   age = gets.chomp
+  if age == ""
+    age = nil
+  else
+    puts age
+  end
 
  end
 
