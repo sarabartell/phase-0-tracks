@@ -9,7 +9,7 @@ def hamster_questionare
   name = gets.chomp
 
   puts "What is hamsters volume level 1-10"
-  volume = gets.chomp
+  volume = gets.chomp.to_i
 
   puts "What is the fur color?"
   color = gets.chomp
@@ -22,8 +22,14 @@ def hamster_questionare
   if age == ""
     age = nil
   else
-    puts age
+    age.to_i
   end
+
+  puts "Hamster name: #{name}"
+  puts "Hamster volume: #{volume}"
+  puts "Hamster fur color: #{color}"
+  puts "Hamster is adoptable: #{adoption}"
+  puts "Hamster age: #{age}"
 
  end
 
