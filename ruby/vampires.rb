@@ -30,7 +30,29 @@ else
 
 end
 
+# define garlic_bread
+if garlic_bread == "Y"
+  garlic_okay = true
+else
+  garlic_okay = false
 
-# if age true where how_old = age == year, AND garlic bread = true OR insurance = true, then not vampire
+end
 
-# if age = false
+# define insurance
+if insurance == "Y"
+  insurance_okay = true
+else
+  insurance_okay = false
+
+end
+
+# if vamp_age = true, AND garlic bread = true OR insurance = true, then p "probably not vampire"
+
+
+# if vamp_age = false, AND garlic_bread = false, then p "probably a vampire"
+
+# if vamp_age = false, AND garlic_bread = false, AND insurance = false, then p "almost certainly a vampire"
+
+# if name == Drake Cula or name == Tu Fang, then p "definitely a vampire"
+
+# if none of above p "results inconclusive"
