@@ -1,16 +1,22 @@
-p "What is your name?"
+puts "How many employees?"
+employees_total = gets.chomp
+first_employee = 1
+# we want to ask # employees first, then run below loop how ever many time employees_total is, loop within a loop like an inception loop
+
+until first_employee > employees_total
+puts "What is your name?"
 name = gets.chomp
 
-p "What is your age?"
+puts "What is your age?"
 age = gets.chomp.to_i
 
-p "What year were you born?"
+puts "What year were you born?"
 year = gets.chomp.to_i
 
-p "Our cafeteria serves garlic bread. Would you like some? Y/N"
+puts "Our cafeteria serves garlic bread. Would you like some? Y/N"
 garlic_bread = gets.chomp
 
-p "Would you like to enroll in our health insurance? Y/N"
+puts "Would you like to enroll in our health insurance? Y/N"
 insurance = gets.chomp
 
 how_old = 2017 - year
@@ -39,16 +45,28 @@ else
 
 end
 
+## define name
+if name == "Drake Cula" || "Tu Fang"
+  name = false
+ else
+  name = true
+end
+
 if vamp_age && (insurance || garlic_bread)
    puts "probably not vampire"
    elsif !vamp_age && (garlic_bread || insurance)
    puts "probably a vampire"
    elsif !(vamp_age && garlic_bread && insurance)
    puts "almost certainly a vampire"
+   elsif !name && (age && garlic && insurance)
+     puts "definitely a vampire"
  else
    puts "result inconclusive"
 
    end
+
+first_employee += 1
+end
 
 # if vamp_age = true, AND garlic bread = true OR insurance = true, then p "probably not vampire"
 # true && (true || false)
