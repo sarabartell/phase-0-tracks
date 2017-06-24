@@ -39,17 +39,25 @@ else
 
 end
 
+if vamp_age && (insurance || garlic_bread)
+   puts "probably not vampire"
+   elsif !vamp_age && (garlic_bread || insurance)
+   puts "probably a vampire"
+   elsif !(vamp_age && garlic_bread && insurance)
+   puts "almost certainly a vampire"
+ else
+   puts "result inconclusive"
+
+   end
+
 # if vamp_age = true, AND garlic bread = true OR insurance = true, then p "probably not vampire"
-if vamp_age && (insurance_okay || garlic_okay) == true
-  p "probably not vampire"
-else
-  p "invalid"
-end
+# true && (true || false)
 
 # if vamp_age = false, AND garlic_bread = false, then p "probably a vampire"
-if vamp_age && (garlic_okay || insurance_okay) == false
+# !true && (true || false)
 
 # if vamp_age = false, AND garlic_bread = false, AND insurance = false, then p "almost certainly a vampire"
+# !true && !true && !true
 
 # if name == Drake Cula or name == Tu Fang, then p "definitely a vampire"
 
