@@ -1,3 +1,5 @@
+## want to take a word, move each letter over to the next in the alphabet by 1, even without knowing what string will contain until user input
+
 def encrypt (text)
   current_index=0
   number_letters=text.length
@@ -18,11 +20,15 @@ def encrypt (text)
    return encrypted_string
 end
 
+# what we want to do - we are starting with our number 0 for letter g,
+# we use this number to find its mapped letter in the alphabet based out of the 26
+# we get that number ie. g = 6, then need to find index/letter for 5 to move string back 1
 
 def decrypt(string)
 
  current_index = 0
   alphabet = ("a".."z").to_a
+
 
  until current_index > string.length - 1
     current_letter = string[current_index]
