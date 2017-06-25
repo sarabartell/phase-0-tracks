@@ -64,15 +64,28 @@ end
    vampire = "definitely a vampire"
  end
 
- ##define allergies and stop loop if sunshine
-if allergic == "sunshine"
-  vampire = "probably a vampire"
-end
+  ##define allergies and stop loop if sunshine
+puts "do you have any allergies? please list and type done when complete or type done if no allergies"
 
+  loop_run = true
+  while loop_run == true
+  puts "list allergies"
+  allergic = gets.chomp
+  if allergic == "sunshine"
+    vampire = "probably a vampire"
+    loop_run = false
+  elsif allergic =="done"
+    loop_run = false
+  else
+    loop_run = true
+   end
+  end
   puts vampire
 
 first_employee += 1
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 # if vamp_age = true, AND garlic bread = true OR insurance = true, then p "probably not vampire"
 # true && (true || false)
