@@ -1,5 +1,5 @@
 puts "How many employees?"
-employees_total = gets.chomp
+employees_total = gets.chomp.to_i
 first_employee = 1
 # we want to ask # employees first, then run below loop how ever many time employees_total is, loop within a loop like an inception loop
 
@@ -45,25 +45,31 @@ else
 
 end
 
-## define name
-if name == "Drake Cula" || "Tu Fang"
-  name = false
- else
-  name = true
-end
-
+#define if a vampire
 if vamp_age && (insurance || garlic_bread)
-   puts "probably not vampire"
+   vampire = "probably not vampire"
    elsif !vamp_age && (garlic_bread || insurance)
-   puts "probably a vampire"
+   vampire = "probably a vampire"
    elsif !(vamp_age && garlic_bread && insurance)
-   puts "almost certainly a vampire"
-   elsif !name && (age && garlic && insurance)
-     puts "definitely a vampire"
+   vampire = "almost certainly a vampire"
  else
    puts "result inconclusive"
+end
 
-   end
+  if name == "Drake Cula"
+  vampire = "definitely a vampire"
+ end
+
+ if name == "Tu Fang"
+   vampire = "definitely a vampire"
+ end
+
+ ##define allergies and stop loop if sunshine
+if allergic == "sunshine"
+  vampire = "probably a vampire"
+end
+
+  puts vampire
 
 first_employee += 1
 end
