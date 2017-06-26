@@ -1,4 +1,32 @@
-## want to take a word, move each letter over to the next in the alphabet by 1, even without knowing what string will contain until user input
+
+=begin
+-Pseudo code
+---Encrypt--
+-declare local variables needed for method.
+  -counter
+  -current letter
+  -string numerator
+  -result string
+-create loop
+  -find  out current letter using index
+  -take value of current letter and shift it to the right
+  -add new value to result
+-close loop when index counter iterates through every character in parameter.
+  -increase value of counter to move onto next letter.
+-add conditional to account for edge cases and blank spaces. Conditional has to go inside loop.
+--Decrypt--
+-declare local variables needed for method.
+  -alphabet variable to include a-z inclusive range to use with indexing/counter
+  -counter
+  -result string
+-loop until value of counter is equal to number or letters in string
+  -add conditional to account for edge cases and blank spaces. Conditional has to go inside loop.
+  -iterate through parameter string
+    -get current letter index value in relation to alphabet array
+    -modify index value to reflect the left shift -1
+    -use new index value to get new letter value from original alphabet array
+-close loop
+=end
 
 def encrypt (text)
   current_index=0
@@ -20,9 +48,7 @@ def encrypt (text)
    return encrypted_string
 end
 
-# what we want to do - we are starting with our number 0 for letter g,
-# we use this number to find its mapped letter in the alphabet based out of the 26
-# we get that number ie. g = 6, then need to find index/letter for 5 to move string back 1
+##
 
 def decrypt(string)
 
