@@ -28,7 +28,7 @@ puts "Wallpaper preferences: A) Paisley, B) Chevron, C) Photorealistic woodsy sc
 wallpaper_prefereces = gets.chomp
 
 puts "Ombre is: A) Fierce, B) So last season, C) Medieval and appalling"
-obre_preference = gets.chomp
+ombre_preference = gets.chomp
 
 designer_application = {
   name: designer_name,
@@ -37,10 +37,24 @@ designer_application = {
   phone: designer_phone,
   shade_blue: designer_blue,
   wallpaper: wallpaper_prefereces,
-  ombre: obre_preference
+  ombre: ombre_preference
 }
 
-puts "Your application states: #{designer_application}
-Is this info correct? Please enter corrections below:"
+puts "Your application states: #{designer_application}"
+puts "Is this info correct? Please enter corrections below:"
 corrections = gets.chomp
 
+if corrections == "none"
+  puts "Great, here is your application #{designer_application}"
+else
+  puts "which input would you like to change?"
+  user_input = gets.chomp
+  puts "what would you like to change you answer to?"
+  corrections = gets.chomp
+  designer_application[user_input.intern] = corrections
+  puts "#{user_input} has been changed to #{corrections}."
+end
+
+puts corrections
+
+## lets say user types "ombre: B", we want to change what gets spit out when we call puts #{designer_application} again from :ombre => A to :ombre => B
