@@ -41,7 +41,7 @@ designer_application = {
 }
 
 puts "Your application states: #{designer_application}"
-puts "Is this info correct? Please enter corrections below:"
+puts "Is this info correct? Please enter none if true, or enter needs corrections"
 corrections = gets.chomp
 
 if corrections == "none"
@@ -55,6 +55,6 @@ else
   puts "#{user_input} has been changed to #{corrections}."
 end
 
-puts corrections
+puts designer_application
 
 ## lets say user types "ombre: B", we want to change what gets spit out when we call puts #{designer_application} again from :ombre => A to :ombre => B
