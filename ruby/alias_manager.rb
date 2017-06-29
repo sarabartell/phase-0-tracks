@@ -5,6 +5,15 @@
 # something like full_name.reverse , so that index 0 and 1 switch the names up
 
 puts "Welcome to name encryptor"
+puts "enter your first name:"
+first_name = gets.chomp
+
+puts "enter your last name:"
+last_name = gets.chomp
+
+full_name = [first_name, last_name]
+p full_name.reverse
+
 
 
 # now that names are switched, we want to identify vowels in another array vowels = ['a','e','i','o','u']
