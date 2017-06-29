@@ -19,7 +19,13 @@ p full_name.reverse
 vowels = "aeiouAEIOU".chars
 vowels.map! {|letter| letter.next}
 
+p vowels
 
 # want to swap or replace vowels in full_name with vowels.next or so
 # first make sure vowels are maping right
 
+def name(string)
+
+end
+
+name
