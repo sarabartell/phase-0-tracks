@@ -14,8 +14,12 @@ last_name = gets.chomp
 full_name = [first_name, last_name]
 p full_name.reverse
 
+# now that names are switched, we want to identify next vowels in another array vowels = ['a','e','i','o','u'] or caps
 
+vowels = "aeiouAEIOU".chars
+vowels.map! {|letter| letter.next}
 
-# now that names are switched, we want to identify vowels in another array vowels = ['a','e','i','o','u']
 
 # want to swap or replace vowels in full_name with vowels.next or so
+# first make sure vowels are maping right
+
