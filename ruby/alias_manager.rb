@@ -1,31 +1,52 @@
-# ask user for their name in 2 parts
-# first_name = gets.chomp
-# last_name = gets.chomp
-# want to organize these inputs into an array, once in an array full_name = ['first_name', 'last_name'] , we want to switch the names
-# something like full_name.reverse , so that index 0 and 1 switch the names up
+# # want to swap or replace vowels in full_name with vowels.next or so
+# # first make sure vowels are maping right
 
-puts "Welcome to name encryptor"
-puts "enter your first name:"
-first_name = gets.chomp
+def alias_generator(name)
 
-puts "enter your last name:"
-last_name = gets.chomp
+name = name.downcase
 
-full_name = [first_name, last_name]
-p full_name.reverse
+vowels_lowcase = %w(a e i o u)
+vowels = vowels_lowcase
+consonants_lowcase = ("a".."z").to_a - vowels
+consonants = consonants_lowcase
 
-# now that names are switched, we want to identify next vowels in another array vowels = ['a','e','i','o','u'] or caps
+# original = (vowels + consonants)
+# new_letters = (vowels.rotate + consonants.rotate)
 
-vowels = "aeiouAEIOU".chars
-vowels.map! {|letter| letter.next}
+name_array = name.split
+name_reverse = name_array.reverse
 
-p vowels
+name_reverse.map! do |word|
+  word_split = word.split("")
+  # name_reverse[1].split("")
 
-# want to swap or replace vowels in full_name with vowels.next or so
-# first make sure vowels are maping right
+  word_split.map! do |letter|
+    if vowels.include? letter
+      index = vowels.index(letter)
+      if letter == vowels.last
+        letter = vowels.first
+      else
+        letter = vowels[index + 1]
+      end
+    else
+      index = consonants.index(letter)
+      if letter == consonants.last
+        letter = consonants.first
+      else
+        letter = consonants[index + 1]
+      end
+    end
+  end
 
-def name(string)
+  word_split[0] = word_split[0].upcase
+  word_split.join('')
+end
+
+name_reverse.join(' ')
+# # p name_reverse.tr(original,new_letters)
+
+
 
 end
 
-name
+alias_generator("Sarah Sheppard")
