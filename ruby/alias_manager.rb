@@ -1,6 +1,7 @@
 # # want to swap or replace vowels in full_name with vowels.next or so
 # # first make sure vowels are maping right
 
+
 def alias_generator(name)
 
 name = name.downcase
@@ -49,4 +50,18 @@ name_reverse.join(' ')
 
 end
 
-alias_generator("Sarah Sheppard")
+puts "Enter your first and last name to scramble. Enter quit when you are finished"
+  loop_run = true
+  # scrambled_name = gets.chomp
+  # puts alias_generator(scrambled_name)
+  while loop_run == true
+  puts "Give me your name:"
+  name_list = gets.chomp
+  if name_list == "quit"
+    puts "done!"
+    loop_run = false
+  else
+     puts alias_generator(name_list)
+     loop_run = true
+  end
+end
