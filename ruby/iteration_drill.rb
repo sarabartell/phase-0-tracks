@@ -14,6 +14,23 @@ zombie_apocalypse_supplies.each {|supplies| print supplies, "*"}
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
 # ----
+def find_it(zombie_apocalypse_supplies,search)
+  is_packed = false
+  # index = 0
+zombie_apocalypse_supplies.each do |items|
+  if search == items
+     is_packed = true
+   end
+   end
+   if is_packed == true
+    puts "#{search} is packed"
+   else is_packed == false
+       puts "sorry, #{search} is not packed"
+  #   index += 1
+   end
+end
+
+find_it(zombie_apocalypse_supplies,"boots")
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
