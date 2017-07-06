@@ -16,7 +16,7 @@ zombie_apocalypse_supplies.each {|supplies| print supplies, "*"}
 # ----
 def find_it(zombie_apocalypse_supplies,search)
   is_packed = false
-  # index = 0
+
 zombie_apocalypse_supplies.each do |items|
   if search == items
      is_packed = true
@@ -26,7 +26,7 @@ zombie_apocalypse_supplies.each do |items|
     puts "#{search} is packed"
    else is_packed == false
        puts "sorry, #{search} is not packed"
-  #   index += 1
+
    end
 end
 
