@@ -48,8 +48,11 @@ puts zombie_apocalypse_supplies
 # and their supplies below. You should get rid of any duplicate items.
 # Find the built-in method that helps you accomplish this in the Ruby
 # documentation for Arrays.
-# other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove", "solar battery", "flashlight"]
+other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove", "solar battery", "flashlight"]
 # ----
+combined_supplies = zombie_apocalypse_supplies + other_survivor_supplies
+
+puts combined_supplies.uniq
 
 # Hash Drills
 
