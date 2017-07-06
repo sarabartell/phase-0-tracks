@@ -1,11 +1,10 @@
 # Array Drills
 
-zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
-                              "shotgun", "compass", "CB radio", "batteries"]
+zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars", "shotgun", "compass", "CB radio", "batteries"]
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
-# ----
+zombie_apocalypse_supplies.each {|supplies| print supplies, "*"}
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
@@ -26,8 +25,7 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # and their supplies below. You should get rid of any duplicate items.
 # Find the built-in method that helps you accomplish this in the Ruby
 # documentation for Arrays.
-other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
-                            "solar battery", "flashlight"]
+other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove", "solar battery", "flashlight"]
 # ----
 
 # Hash Drills
