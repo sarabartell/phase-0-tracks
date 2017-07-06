@@ -33,6 +33,15 @@ find_it(zombie_apocalypse_supplies,"boots")
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5, using #each.
 # ----
+start = 0
+
+zombie_apocalypse_supplies.each do
+  until start == 3
+  zombie_apocalypse_supplies.pop
+  start += 1
+end
+end
+puts zombie_apocalypse_supplies
 
 # 4. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
