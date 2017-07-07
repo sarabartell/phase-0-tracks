@@ -72,12 +72,16 @@ extinct_animals.each {|key, value| puts "#{key}-#{value}*"}
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
-# ----
+# ---- not yet done*******
+ new_animals = extinct_animals.delete_if {|animal, year| year > 2000}
+   p new_animals
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # using #each, so they accurately reflect what year the animal went extinct.
 # ----
+
+puts extinct_animals.each {|animals, year| extinct_animals[animals] = year - 3}
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Build a method  using #each that checks if an animal is in the hash and returns true/false.
