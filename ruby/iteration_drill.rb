@@ -115,3 +115,6 @@ is_extinct(extinct_animals,"Saiga Antelope")
 # Find a Ruby Hash built-in method that helps you accomplish this or build
 # your own method using #each
 # ----
+
+p extinct_animals.shift
+p extinct_animals
