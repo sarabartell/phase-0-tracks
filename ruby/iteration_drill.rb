@@ -93,6 +93,23 @@ puts extinct_animals.each {|animals, year| extinct_animals[animals] = year - 3}
 # Driver code example: is_extinct?(extinct_animals, "Andean Cat")
 # ----
 
+def is_extinct(extinct_animals,animal_maybe_alive)
+  extinct = false
+
+  extinct_animals.each do |animals, years|
+    if animal_maybe_alive == animals
+      extinct = true
+    end
+  end
+  if extinct == true
+    puts "#{animal_maybe_alive} is extinct"
+  else extinct == false
+    puts "#{animal_maybe_alive} is not extinct!"
+  end
+end
+
+is_extinct(extinct_animals,"Saiga Antelope")
+
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find a Ruby Hash built-in method that helps you accomplish this or build
