@@ -21,7 +21,7 @@ def create(begin_list)
     hash_list[item] = default_quantity
   end
 
-  p hash_list
+   hash_list
 end
 
 first_list = create(begin_list)
@@ -31,19 +31,19 @@ first_list = create(begin_list)
 # then store the new item in the list with type and quanity if entered, otherwise default to 1
 # output: updated list with new items
 
-def add_item(item,quanity,first_list)
-  if quanity == ""
-    quanity = 1
+def add_item(item,quantity,first_list)
+  if quantity == ""
+    quantity = 1
   else
-    quanity
+    quantity
   end
-  first_list[item] = quanity
+  first_list[item] = quantity
 
 end
 
 add_item("banana","3",first_list)
 
-p first_list
+# p first_list
 # Method to remove an item from the list
 # input: user input
 # steps: take user input and remove called item entirely from the list
@@ -56,14 +56,27 @@ end
 
 remove_item("carrots",first_list)
 
-p first_list
+# p first_list
 # Method to update the quantity of an item
 # input: item on the list already
 # steps: loop through the hash to find the item(identify the key) and update the quantity of the item
 # output: updated list with new quantity
 
+def update_item(item,quantity_changed,first_list)
+  first_list[item] = quantity_changed
 
+end
+
+update_item("pizza","2",first_list)
+
+# p first_list
 # Method to print a list and make it look pretty
 # input: hash with most updated list values
 # steps: puts the items of the list out, edit the UI to make it look nice
 # output: call at the end of driver code to show everything together
+def print_list(first_list)
+  puts "Here is your final list:"
+  first_list.each {|item, quantity| puts "* #{item} : #{quantity}"}
+end
+
+print_list(first_list)
