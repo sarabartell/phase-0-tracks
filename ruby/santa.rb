@@ -42,20 +42,36 @@ class Santa
 
 end
 
-santas = Santa.new("female","white")
+gender = ["female","male","transgender","N/A"]
+ethnicity = ["white","pacific islander","african american","lantino"]
+
+santas = Santa.new(gender.sample,ethnicity.sample)
 p santas.speak
 p santas.eat_milk_and_cookies("chocolate chip")
 p santas.celebrate_birthday(1)
 p santas.get_mad_at("Dasher")
-p santas.gender = "bisexual"
+p santas.gender = "male"
 puts "Santas age is #{santas.age} and he is #{santas.ethnicity}"
 
 
-santas = []
-gender = ["female","male","transgender","N/A"]
-ethnicity = ["white","pacific islander","african american","lantio"]
-gender.length.times do |input|
-  santas << Santa.new(gender[input], ethnicity[input])
+# santas = []
+
+# gender.length.times do |input|
+#   santas << Santa.new(gender[input], ethnicity[input])
+# end
+
+def multi_santa
+  santa_array = []
+  first_santa = 0
+  while first_santa < 51
+    santas = Santa.new(gender,ethnicity)
+    santa_array << santas
+    first_santa += 1
+  end
+  santa_array.each do |santa_number|
+    p santas.speak
+    p santas.eat_milk_and_cookies("chocolate chip")
+  end
 end
 
-p santas
+multi_santa
