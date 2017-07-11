@@ -14,19 +14,24 @@ def eat_milk_and_cookies(cookie)
   "That was a good #{cookie}!"
 end
 
-# def my_santa
-#   puts @gender
-#   puts @ethnicity
-#   p @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-#   puts @age = 0
-# end
+def get_mad_at(reindeer_name)
+  @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+  @reindeer_ranking.delete_if {|names| names == reindeer_name}
+  @reindeer_ranking.insert(-1, reindeer_name)
+end
+
+def celebrate_birthday(age)
+  @age = age
+  @age += 1
+end
 
 end
 
-# holiday = Santa.new("female","white")
-# p holiday.speak
-# p holiday.eat_milk_and_cookies("chocolate chip")
-# p holiday.my_santa
+holiday = Santa.new("female","white")
+p holiday.speak
+p holiday.eat_milk_and_cookies("chocolate chip")
+p holiday.celebrate_birthday(1)
+p holiday.get_mad_at("Dasher")
 
 
 santas = []
