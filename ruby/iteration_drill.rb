@@ -6,7 +6,6 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars", "
 
 zombie_apocalypse_supplies.each {|supplies| print supplies, "*"}
 
-
 # 2. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies using #each.
 # For instance: are boots in your list of supplies?
@@ -24,9 +23,6 @@ zombie_apocalypse_supplies.each do |items|
    else is_packed == false
        puts "sorry, #{search} is not packed"
 
-   end
-end
-
 find_it(zombie_apocalypse_supplies,"boots")
 
 # 3. You can't carry too many things, you've only got room in your pack for 5.
@@ -34,7 +30,6 @@ find_it(zombie_apocalypse_supplies,"boots")
 # leaving only 5, using #each.
 # ----
 start = 0
-
 zombie_apocalypse_supplies.each do
   until start == 3
   zombie_apocalypse_supplies.pop
@@ -56,15 +51,16 @@ puts combined_supplies.uniq
 
 # Hash Drills
 
-# extinct_animals = {
-#   "Passenger Pigeon" => 1914,
-#   "Tasmanian Tiger" => 1936,
-#   "Eastern Hare Wallaby" => 1890,
-#   "Dodo" => 1662,
-#   "Pyrenean Ibex" => 2000,
-#   "West African Black Rhinoceros" => 2011,
-#   "Laysan Crake" => 1923
-# }
+extinct_animals = {
+  "Passenger Pigeon" => 1914,
+  "Tasmanian Tiger" => 1936,
+  "Eastern Hare Wallaby" => 1890,
+  "Dodo" => 1662,
+  "Pyrenean Ibex" => 2000,
+  "West African Black Rhinoceros" => 2011,
+  "Laysan Crake" => 1923
+}
+
 
 # 1. Iterate through extinct_animals hash using #each, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
@@ -75,6 +71,7 @@ extinct_animals.each {|key, value| puts "#{key}-#{value}*"}
 # ---- not yet done*******
  new_animals = extinct_animals.delete_if {|animal, year| year > 2000}
    p new_animals
+
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
