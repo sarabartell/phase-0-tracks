@@ -27,7 +27,7 @@ class Santa
     @age += 1
   end
 
-#code that contained getter and setters
+####code that contained getter and setters
   # def gender=(new_gender)
   #   @gender = new_gender
   # end
@@ -42,16 +42,17 @@ class Santa
 
 end
 
-gender = ["female","male","transgender","N/A"]
-ethnicity = ["white","pacific islander","african american","lantino"]
+### Code that originally tested methods
+# gender = ["female","male","transgender","N/A"]
+# ethnicity = ["white","pacific islander","african american","lantino"]
 
-santas = Santa.new(gender.sample,ethnicity.sample)
-p santas.speak
-p santas.eat_milk_and_cookies("chocolate chip")
-p santas.celebrate_birthday(1)
-p santas.get_mad_at("Dasher")
-# p santas.gender = "male"
-puts "Santas age is #{santas.age} and he is #{santas.ethnicity}"
+# santas = Santa.new(gender.sample,ethnicity.sample)
+# p santas.speak
+# p santas.eat_milk_and_cookies("chocolate chip")
+# p santas.celebrate_birthday(1)
+# p santas.get_mad_at("Dasher")
+# # p santas.gender = "male"
+# puts "Santas age is #{santas.age} and he is #{santas.ethnicity}"
 
 
 def multi_santa
@@ -69,10 +70,8 @@ def multi_santa
   santa_array.each do |santa_number|
     p santas.speak
     p santas.eat_milk_and_cookies("chocolate chip")
-    # p santas.celebrate_birthday(58)
     p santas.get_mad_at("Dasher")
-    p santas
   end
 end
 
-multi_santa
+p multi_santa
