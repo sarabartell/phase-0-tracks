@@ -19,7 +19,15 @@ module Shout
 end
 
 class Captain
+  include Shout
 end
 
 class Soldier
+  include Shout
 end
+
+captain = Captain.new
+captain.shouting("I am the captain on this damn ship!!!!!")
+
+soldier = Soldier.new
+soldier.shouting("Affermative, Captain *saluts*")
