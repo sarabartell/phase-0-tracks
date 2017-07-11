@@ -31,24 +31,37 @@ first_list = create(begin_list)
 # then store the new item in the list with type and quanity if entered, otherwise default to 1
 # output: updated list with new items
 
-def add_item(item,first_list)
-  quantity = 1
-  first_list[item] = quantity
+def add_item(item,quanity,first_list)
+  if quanity == ""
+    quanity = 1
+  else
+    quanity
+  end
+  first_list[item] = quanity
 
 end
 
-add_item("banana",first_list)
+add_item("banana","3",first_list)
 
 p first_list
 # Method to remove an item from the list
 # input: user input
 # steps: take user input and remove called item entirely from the list
 # output: updated list without item
+def remove_item(item,first_list)
 
+  first_list.delete(item)
+
+end
+
+remove_item("carrots",first_list)
+
+p first_list
 # Method to update the quantity of an item
 # input: item on the list already
 # steps: loop through the hash to find the item(identify the key) and update the quantity of the item
 # output: updated list with new quantity
+
 
 # Method to print a list and make it look pretty
 # input: hash with most updated list values
