@@ -9,7 +9,7 @@
 # output: print back the hash of the list in a readable way with
 #list item and quantity [what data type goes here, array or hash?]
 
-begin_list = "carrots apples cereal pizza"
+begin_list = "pizza cereal chips salsa"
 
 
 def create(begin_list)
@@ -41,8 +41,6 @@ def add_item(item,quantity,first_list)
 
 end
 
-add_item("banana","3",first_list)
-
 # p first_list
 # Method to remove an item from the list
 # input: user input
@@ -53,8 +51,6 @@ def remove_item(item,first_list)
   first_list.delete(item)
 
 end
-
-remove_item("carrots",first_list)
 
 # p first_list
 # Method to update the quantity of an item
@@ -67,8 +63,6 @@ def update_item(item,quantity_changed,first_list)
 
 end
 
-update_item("pizza","2",first_list)
-
 # p first_list
 # Method to print a list and make it look pretty
 # input: hash with most updated list values
@@ -78,5 +72,17 @@ def print_list(first_list)
   puts "Here is your final list:"
   first_list.each {|item, quantity| puts "* #{item} : #{quantity}"}
 end
+
+
+## calls for methods
+add_item("tomatoes","3",first_list)
+add_item("lemonade","2",first_list)
+add_item("Onions","1",first_list)
+add_item("Ice Cream","4",first_list)
+
+remove_item("lemonade",first_list)
+
+update_item("Ice Cream","1",first_list)
+update_item("pizza","5",first_list)
 
 print_list(first_list)
