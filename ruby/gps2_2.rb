@@ -86,3 +86,12 @@ update_item("Ice Cream","1",first_list)
 update_item("pizza","5",first_list)
 
 print_list(first_list)
+
+
+##reflection
+#From setting up a detailed pseudocode I really learned that it can be much easier to break down a method than Ive been making it out to be. Kinda of like in the video for week 4 they wrote pieces of the method that didnt make sense individually but it helps visualize how all the pieces come together.
+#using arrays and hashes was a much simpler way to store data that has multiple pieces, like the items didn't mean much unless they had a quanitity which couldn't be accessed unless they were pointing at each other. And then it made it simpler to call the hash in previous methods for new work rather than calling multiple variables
+# a method returns the final product of the variables, if statements, loops, you put internally
+#you can pass other methods into arguments, new variables in string for
+# to pass info between methods you need to call that method at an argument like we did with the create method, only we assigned it to a variable on line 27 so we could call it within the following methods
+#how to call information between methods and how to effectively pseudocode were very solidified. For me its easy to work 3 steps ahead or try to envision the driver code at the same time. This helped me focus on how methods are actually working and how they are being called.
