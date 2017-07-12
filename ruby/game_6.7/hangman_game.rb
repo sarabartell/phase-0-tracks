@@ -1,12 +1,17 @@
-#user 1 enters a word
-# input: word
-# steps: prompt, get chomp, probably store this secret word in some type of array
-# output: secret word stored in array
-
 class Hangman
+  attr_reader :is_over, :guess_count
 
-  def secret_word(user_1_input)
-    secret_array = user_1_input.split("")
-    p secret_array
+  def initialize(user_1_input)
+    @secret_array = user_1_input.split("")
+    @is_over = false
+    @guess_count = 0
+    p @secret_array
    end
-  secret_word("banana")
+
+  def guessed_word(user_2_input)
+  end
+
+end
+
+game = Hangman.new("banana")
+
