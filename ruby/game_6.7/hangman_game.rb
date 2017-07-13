@@ -6,7 +6,7 @@ class Hangman
     secret_array = @secret_array
     @is_over = false
     @guess_count = 0
-    @secret_array
+    @guessed_letter = []
    end
 
   def make_word_secret
@@ -20,20 +20,26 @@ class Hangman
  #    @user_guess
  #  end
 
-  def match_guess_to_secret(guessed_letter)
+  def match_guess_to_secret(guesses)
     @guess_count += 1
+    @guessed_letter << guesses
     secret_array = @secret_array
     # @user_guess = guessed_letter
-      if secret_array.include?(guessed_letter)
+    secret_array.each do |letters|
+      if @guessed_letter.include?(letters)
         #if "a".include?([b,a,n,a,n,a]) -- true
-        p secret_array.index(guessed_letter)
+        print letters
+      else
+        print  "- "
       end
+    end
   end
 
 end
 
-game = Hangman.new("banana")
+game = Hangman.new("oil")
 
 p game.make_word_secret
 
-game.match_guess_to_secret("a")
+game.match_guess_to_secret("b")
+game.match_guess_to_secret("i")
