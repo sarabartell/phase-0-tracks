@@ -1,0 +1,36 @@
+user 1 enters a word
+input: word
+steps: prompt, get chomp, probably store this secret word in some type of array
+output: secret word stored in array
+
+secret word gets stored
+input: user 1s word
+steps: save as an array, break into characters to read them individually,
+output: secret word stored as length "______"
+
+guessed letters
+input: letters
+steps: ask for a letter, run that letter through another method to check if in secret word, store good guesses at index of word
+outputs: either in word or not
+
+matching letters
+input: a guess already made
+steps: confirms "b" is already guessed, doesnt store b again, and just counts as a nil guess
+outputs: nothing changes in guess count
+
+guesses count (can be in driver code)
+inputs: users guesses count
+steps: limit of guesses are equal to the length of the word, repeat of input for guesses do not count or maybe say you already said that try again!
+if guess is correct we want to put that as an output
+if not correct keep track of times of failed guesses
+output: guesses left
+
+returning feedback on guesses (can be in driver code)
+inputs: guessed letters matched to word (guessed letters method)
+steps: if letter is correctly guessed, feedback will match the placement of letter
+output: string returning joined word with correct letter and blanks left over
+
+win or loose (can be in driver code)
+inputs: guessed letters, guess count still below word length
+steps: if the total guessed letters == secret word then they win, if the total guessed letter > secret word lenght then they loose
+outputs: string about winning or loosing
