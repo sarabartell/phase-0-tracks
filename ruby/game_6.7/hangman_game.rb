@@ -41,8 +41,13 @@ class Hangman
     end
 
     def is_over
-      if @guess_count == 0 || @blank_word == @secret_array
+      if @guess_count == 0
         @is_over = true
+        puts "sorry, you lost! No more guesses :("
+      elsif
+        @blank_word == @secret_array
+        @is_over = true
+        puts "congrats! you guessed the secret word: #{@blank_word.join("")}"
       else
         false
       end
@@ -51,3 +56,7 @@ class Hangman
   end
 
 end
+
+#user interface
+game = Hangman.new("banana")
+
