@@ -1,13 +1,13 @@
-#class for Hangman
-
 class Hangman
+  attr_reader :blank_word, :guess_count
+  attr_reader :is_over
 
   def initialize(user_1_word)
     @secret_array = user_1_word.split("")
     @guessed_letters = []
     @guess_count = @secret_array.length
-    #6 with banana
     @blank_word = Array.new(@secret_array.length, "_")
+    @is_over = false
   end
 
   def user_2_input(guesses)
@@ -27,10 +27,9 @@ class Hangman
         @guess_count -= 1
     else
         @guess_is_correct = false
-        puts "sorry, #{@guesses} is not in #{@blank_word}, try again."
+        puts "sorry, #{@guesses} is not in #{@blank_word}."
         @guess_count -= 1
     end
-    p @guess_count
   end
 
   def replace_guesses
@@ -39,8 +38,9 @@ class Hangman
         @blank_word[i] = @guesses
       end
     end
+  end
 
-    def is_over
+    def true_false
       if @guess_count == 0
         @is_over = true
         puts "sorry, you lost! No more guesses :("
@@ -53,10 +53,36 @@ class Hangman
       end
     end
 
-  end
-
 end
 
-#user interface
-game = Hangman.new("banana")
+# game = Hangman.new("banana")
 
+# game.user_2_input("b")
+# game.replace_guesses
+# game.play_game
+# p game.is_over
+# UI
+
+puts "Lets play hangman"
+puts "User 1: Please give me your secret word."
+user_1_input = gets.chomp
+game = Hangman.new(user_1_input)
+
+
+puts "Here is the secret word: #{game.blank_word}"
+puts "User 2: Guess letters you think is in the secret word"
+puts "You only have #{game.guess_count} guesses. Repeat letters don't count! Good Luck."
+
+while !game.true_false
+  if game.is_over == false
+    puts "User 2:Enter a letter."
+    guesses = gets.chomp
+    game.user_2_input(guesses)
+    game.replace_guesses
+    game.play_game
+
+  else
+    game.is_over == true
+      break
+    end
+end
