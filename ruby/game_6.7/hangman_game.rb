@@ -10,24 +10,24 @@ class Hangman
     @is_over = false
   end
 
-  def user_2_input(guesses)
-    @guesses = guesses
-  end
+  # def user_2_input(guesses)
+  #   @guesses = guesses
+  # end
 
-  def play_game
-    if !@guessed_letters.include? @guesses
-       @guessed_letters << @guesses
+  def play_game(guesses)
+    if !@guessed_letters.include? guesses
+       @guessed_letters << guesses
       else
-        puts "you already used #{@guesses}."
+        puts "you already used #{guesses}."
         @guess_count += 1
     end
-    if @secret_array.include? @guesses
+    if @secret_array.include? guesses
         guess_is_correct = true
-        puts "revealed: #{@blank_word}."
+        puts "revealed: #{blank_word}."
         @guess_count -= 1
     else
         guess_is_correct = false
-        puts "sorry, #{@guesses} is not in #{@blank_word}."
+        puts "sorry, #{guesses} is not in #{@blank_word}."
         @guess_count -= 1
     end
   end
@@ -38,6 +38,7 @@ class Hangman
         @blank_word[i] = guesses
       end
     end
+    @blank_word
   end
 
   def true_false
@@ -68,27 +69,27 @@ end
 # p game.is_over
 # UI
 
-puts "Lets play hangman"
-puts "User 1: Please give me your secret word."
-user_1_input = gets.chomp
-game = Hangman.new(user_1_input)
+# puts "Lets play hangman"
+# puts "User 1: Please give me your secret word."
+# user_1_input = gets.chomp
+# game = Hangman.new(user_1_input)
 
 
-puts "Here is the secret word: #{game.blank_word}"
-puts "User 2: Guess letters you think is in the secret word"
-puts "You only have #{game.guess_count} guesses. Repeat letters don't count! Good Luck."
+# puts "Here is the secret word: #{game.blank_word}"
+# puts "User 2: Guess letters you think is in the secret word"
+# puts "You only have #{game.guess_count} guesses. Repeat letters don't count! Good Luck."
 
-while !game.true_false
-  if game.is_over == false
-    puts "User 2:Enter a letter."
-    guesses = gets.chomp
-    game.user_2_input(guesses)
-    game.replace_guesses(guesses)
-    game.play_game
+# while !game.true_false
+#   if game.is_over == false
+#     puts "User 2:Enter a letter."
+#     guesses = gets.chomp
+#     # game.user_2_input(guesses)
+#     game.replace_guesses(guesses)
+#     game.play_game(guesses)
 
-  else
-    game.is_over == true
-      break
-    end
+#   else
+#     game.is_over == true
+#       break
+#     end
 
-end
+# end
