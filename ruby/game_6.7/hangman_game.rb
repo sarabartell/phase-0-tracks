@@ -1,3 +1,4 @@
+
 class Hangman
   attr_reader :blank_word, :guess_count
   attr_reader :is_over
@@ -61,7 +62,7 @@ class Hangman
 
 end
 
-# game = Hangman.new("banana")
+#  game = Hangman.new("banana")
 
 # game.user_2_input("b")
 # game.replace_guesses
@@ -69,27 +70,27 @@ end
 # p game.is_over
 # UI
 
-# puts "Lets play hangman"
-# puts "User 1: Please give me your secret word."
-# user_1_input = gets.chomp
-# game = Hangman.new(user_1_input)
+puts "Lets play hangman"
+puts "User 1: Please give me your secret word."
+user_1_input = gets.chomp
+game = Hangman.new(user_1_input)
 
 
-# puts "Here is the secret word: #{game.blank_word}"
-# puts "User 2: Guess letters you think is in the secret word"
-# puts "You only have #{game.guess_count} guesses. Repeat letters don't count! Good Luck."
+puts "Here is the secret word: #{game.blank_word}"
+puts "User 2: Guess letters you think is in the secret word"
+puts "You only have #{game.guess_count} guesses. Repeat letters don't count! Good Luck."
 
-# while !game.true_false
-#   if game.is_over == false
-#     puts "User 2:Enter a letter."
-#     guesses = gets.chomp
-#     # game.user_2_input(guesses)
-#     game.replace_guesses(guesses)
-#     game.play_game(guesses)
+while !game.true_false
+  if game.is_over == false
+    puts "User 2:Enter a letter."
+    guesses = gets.chomp
+#     game.user_2_input(guesses)
+    game.replace_guesses(guesses)
+    game.play_game(guesses)
 
-#   else
-#     game.is_over == true
-#       break
-#     end
+  else
+    game.is_over == true
+      break
+    end
 
-# end
+end
