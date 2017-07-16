@@ -22,11 +22,11 @@ class Hangman
         @guess_count += 1
     end
     if @secret_array.include? @guesses
-        @guess_is_correct = true
+        guess_is_correct = true
         puts "revealed: #{@blank_word}."
         @guess_count -= 1
     else
-        @guess_is_correct = false
+        guess_is_correct = false
         puts "sorry, #{@guesses} is not in #{@blank_word}."
         @guess_count -= 1
     end
@@ -40,18 +40,23 @@ class Hangman
     end
   end
 
-    def true_false
-      if @guess_count == 0
-        @is_over = true
-        puts "sorry, you lost! No more guesses :("
-      elsif
-        @blank_word == @secret_array
-        @is_over = true
-        puts "congrats! you guessed the secret word: #{@blank_word.join("")}"
-      else
-        false
-      end
+  def true_false
+    is_over = false
+
+    if @guess_count == -1 && @blank_word == @secret_array
+      @is_over = true
+      puts "congrats! you guesses: #{@blank_word.join("")}"
+    elsif
+      @blank_word == @secret_array
+      @is_over = true
+      puts "congrats! you guessed the secret word: #{@blank_word.join("")}"
+    elsif @guess_count == 0 && @blank_word != @secret_array
+      @is_over = true
+    puts "sorry, you lost! No more guesses :(!!!!"
+    else
+      false
     end
+  end
 
 end
 
@@ -85,4 +90,5 @@ while !game.true_false
     game.is_over == true
       break
     end
+
 end
