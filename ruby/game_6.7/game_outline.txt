@@ -13,7 +13,7 @@ input: letters
 steps: ask for a letter, run that letter through another method to check if in secret word, store good guesses at index of word
 outputs: either in word or not
 
-matching letters
+matching letters, possibly in driver code!
 input: a guess already made
 steps: confirms "b" is already guessed, doesnt store b again, and just counts as a nil guess
 outputs: nothing changes in guess count
