@@ -32,10 +32,10 @@ class Hangman
     end
   end
 
-  def replace_guesses
+  def replace_guesses(guesses)
     @secret_array.each_index do |i|
-      if @secret_array[i] == @guesses
-        @blank_word[i] = @guesses
+      if @secret_array[i] == guesses
+        @blank_word[i] = guesses
       end
     end
   end
@@ -83,7 +83,7 @@ while !game.true_false
     puts "User 2:Enter a letter."
     guesses = gets.chomp
     game.user_2_input(guesses)
-    game.replace_guesses
+    game.replace_guesses(guesses)
     game.play_game
 
   else
