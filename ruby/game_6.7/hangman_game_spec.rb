@@ -10,4 +10,6 @@ describe Hangman do
   it "takes a secret array, and replaces guesses into new word" do
     hangman_game.user_2_input("a")
     expect hangman_game.replace_guesses.to eq ["_", "a", "_", "a", "_", "a"]
+   end
+
 end
