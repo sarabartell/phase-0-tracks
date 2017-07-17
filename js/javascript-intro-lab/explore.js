@@ -16,3 +16,11 @@ console.log(reverse("hello"));
 var reversed_word = console.log(reverse("sara"));
 
 // console.log(reversed_word);
+
+var LikesCats = true;
+
+if (LikesCats) {
+  console.log(reverse("MEOW"));
+} else {
+  console.log(reverse("WOOF"));
+}
