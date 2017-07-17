@@ -12,3 +12,7 @@ function reverse(string) {
 }
 
 console.log(reverse("hello"));
+
+var reversed_word = console.log(reverse("sara"));
+
+// console.log(reversed_word);
