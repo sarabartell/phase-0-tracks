@@ -1,4 +1,4 @@
-var longestPhrase = ["Sara", "Sara is my name","Sara = me", "I am Sara"]
+var longestPhrase = ["Sara", "Sara is my name","Sara = me", "I am Sara!"]
 
 // write a method that finds the longest phrase
 //loop through each, during each loop find the phrase at that index, print that and find the phrase length
@@ -6,11 +6,10 @@ var longestPhrase = ["Sara", "Sara is my name","Sara = me", "I am Sara"]
 
 function findLongest(longestPhrase){
   for (var i = 0; i < longestPhrase.length; i++){
-    var phraseLength = longestPhrase[i].length
-      if (phraseLength > phraseLength.next)
-
-
-    console.log(phraseLength);
+      var current = longestPhrase[i]
+      if (longestPhrase.length < current.length){
+      return longestPhrase[i];
+    }
   }
 }
 
