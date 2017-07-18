@@ -5,5 +5,13 @@ var longestPhrase = ["Sara", "Sara is my name","Sara = me", "I am Sara"]
   // if somehow phrase(1) is longest, print phrase at 1
 
 function findLongest(longestPhrase){
+  for (var i = 0; i < longestPhrase.length; i++){
+    var phraseLength = longestPhrase[i].length
+      if (phraseLength > phraseLength.next)
 
+
+    console.log(phraseLength);
+  }
 }
+
+console.log(findLongest(longestPhrase))
