@@ -9,15 +9,15 @@ function findLongest(longestPhrase){
 
   for(var i = 0; i < longestPhrase.length; i++){
       if (longestPhrase[i].length > largerThan){
-      largerThan = longestPhrase[i];
+      largerThan = longestPhrase[i].length;
+      word = longestPhrase[i];
     }
-
   }
-  return largerThan;
+  return word;
 }
 
-console.log(findLongest(["Sara", "Banana","Peanutbutter", "pizza"]))
+console.log(findLongest(["Sara", "Banana","Peanutbutter", "pizza"]));
 
-console.log(findLongest(["beans","limezzz","edamame","cauliflowers"]))
+console.log(findLongest(["beans","limezzz","edamame","cauliflowers"]));
 
-console.log(findLongest(["water","skinny soy latte","t","tea"]))
+console.log(findLongest(["water","skinny soy latte","t","tea"]));
