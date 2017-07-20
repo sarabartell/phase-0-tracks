@@ -57,22 +57,22 @@ class Hangman
 end
 
 ##UI
-# puts "Lets play hangman"
-# puts "User 1: Please give me your secret word."
-# user_1_input = gets.chomp
-# game = Hangman.new(user_1_input)
+puts "Lets play hangman"
+puts "User 1: Please give me your secret word."
+user_1_input = gets.chomp
+game = Hangman.new(user_1_input)
 
-# puts "Here is the secret word: #{game.blank_word.join(" ")}"
-# puts "User 2: Guess letters you think is in the secret word"
-# puts "You only have #{game.guess_count} guesses. Repeat letters don't count! Good Luck."
+puts "Here is the secret word: #{game.blank_word.join(" ")}"
+puts "User 2: Guess letters you think is in the secret word"
+puts "You only have #{game.guess_count} guesses. Repeat letters don't count! Good Luck."
 
-# while !game.won_or_lost
-#   puts "User 2 --> Enter a letter:"
-#   guesses = gets.chomp
-#   game.find_unique_letters(guesses)
-#   game.guess_correctly(guesses)
-#   puts "you have #{game.guess_count} guesses left"
-#   if game.won == true
-#     break
-#   end
-# end
+while !game.won_or_lost
+  puts "User 2 --> Enter a letter:"
+  guesses = gets.chomp
+  game.find_unique_letters(guesses)
+  game.guess_correctly(guesses)
+  puts "you have #{game.guess_count} guesses left"
+  if game.won == true
+    break
+  end
+end
