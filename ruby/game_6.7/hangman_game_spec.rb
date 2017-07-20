@@ -33,4 +33,47 @@ describe Hangman do
     expect(hangman_game.won_or_lost).to be false
   end
 
+  it "completes game when all guesses are correct and blank_array == secret_array" do
+    hangman_game.guess_correctly("c")
+    hangman_game.guess_correctly("a")
+    hangman_game.guess_correctly("t")
+    expect(hangman_game.won_or_lost).to be true
+  end
+
+  it "completes game when all guesses are wrong and guess_count == 0" do
+    hangman_game.guess_correctly("i")
+    hangman_game.guess_correctly("u")
+    hangman_game.guess_correctly("v")
+    expect(hangman_game.won_or_lost).to be true
+  end
+
+  it "makes guess_count readable" do
+    expect(hangman_game.guess_count).to eq 3
+  end
+
+  it "makes blank_array readable" do
+    expect(hangman_game.blank_word).to eq ["_", "_", "_"]
+   end
+
+   it "reduces guess count by 1 when guess is correct" do
+    hangman_game.guess_correctly("a")
+    expect(hangman_game.guess_count).to eq 2
+  end
+
+  it "reduces guess count by 1 when guess is incorrect" do
+    hangman_game.guess_correctly("y")
+    expect(hangman_game.guess_count).to eq 2
+  end
+
+  it "gives a guess back, when same letters are guessed" do
+    hangman_game.find_unique_letters("a")
+    expect(hangman_game.guess_count).to eq 3
+  end
+
+  it "collects the guesses unique letters and makes readable" do
+    hangman_game.find_unique_letters("y")
+    hangman_game.find_unique_letters("a")
+    expect(hangman_game.guessed_letters).to eq ["y", "a"]
+  end
+
 end

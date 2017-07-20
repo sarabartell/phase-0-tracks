@@ -1,6 +1,5 @@
 class Hangman
-  attr_reader :blank_word, :guess_count
-  attr_reader :won
+  attr_reader :blank_word, :guess_count, :won, :guessed_letters
 
   def initialize(user_1_word)
     @secret_array = user_1_word.split("")
@@ -45,13 +44,14 @@ class Hangman
     def won_or_lost
       if @blank_word == @secret_array && (@guess_count >= 0)
         puts "congrats! you guessed the secret word: #{@blank_word.join("")}"
-        won = true
+        @won = true
       elsif @blank_word != @secret_array && (@guess_count == 0)
         puts "you ran out of guesses. SAD."
-        won = true
+        @won = true
       else
-        false
+        @won = false
       end
+      @won
     end
 
 end
