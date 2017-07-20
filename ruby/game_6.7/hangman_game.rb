@@ -53,6 +53,7 @@ class Hangman
         false
       end
     end
+
 end
 
 ##UI
