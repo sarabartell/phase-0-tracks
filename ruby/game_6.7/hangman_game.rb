@@ -24,10 +24,10 @@ class Hangman
       if @secret_array.include? guesses
           @guess_count -= 1
           replace_guesses(guesses)
-          puts "#{guesses} is in: #{@blank_word.join(" ")} !"
+          p "#{guesses} is in: #{@blank_word.join(" ")} !"
       else
           @guess_count -= 1
-          puts "sorry, #{guesses} is not in: #{@blank_word.join(" ")}."
+          p "sorry, #{guesses} is not in: #{@blank_word.join(" ")}."
       end
   end
 

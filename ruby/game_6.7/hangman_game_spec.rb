@@ -16,6 +16,13 @@ describe Hangman do
     expect(hangman_game.find_unique_letters("b")).to eq "you already used b."
   end
 
+  it "gives user feedback if their guess was correct and reveals letters" do
+    expect(hangman_game.guess_correctly?("n")).to eq "n is in: _ _ n _ n _ !"
+  end
 
+  it "gives user feedback if their guess was incorrect, and shows previous edits" do
+    hangman_game.guess_correctly?("n")
+    expect(hangman_game.guess_correctly?("y")).to eq "sorry, y is not in: _ _ n _ n _."
+  end
 
 end
