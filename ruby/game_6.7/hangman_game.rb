@@ -20,7 +20,7 @@ class Hangman
   end
 
 ##this method shows if a guess letter is included in the secret_array, if yes, then it shows blank word at its most up to date spot. otherwise it says, not in array , returns the array of proper guesses
-  def guess_correctly?(guesses)
+  def guess_correctly(guesses)
       if @secret_array.include? guesses
           @guess_count -= 1
           replace_guesses(guesses)
@@ -69,7 +69,7 @@ end
 #   puts "User 2 --> Enter a letter:"
 #   guesses = gets.chomp
 #   game.find_unique_letters(guesses)
-#   game.guess_correctly?(guesses)
+#   game.guess_correctly(guesses)
 #   puts "you have #{game.guess_count} guesses left"
 #   if game.won == true
 #     break
