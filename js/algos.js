@@ -32,12 +32,13 @@
 
 function randomStrings(x){
   var word = "";
-  // var strings = [];
+  var strings = [];
   var letters = "ngjdkasignrakfsajgsad";
-  for (var i = 0; i < 10; i++){
+  for (var i = 0; i < x; i++){
     word += letters.charAt(Math.floor(Math.random() * letters.length));
+    strings.push(word);
   }
-  return word;
+  return strings;
 }
 
 console.log(randomStrings(3));
