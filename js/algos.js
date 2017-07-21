@@ -32,7 +32,6 @@
 
 function randomStrings(length){
   var strings = [];
-  var word = "";
   var letters = "ngjdkasignrakfsajgsad";
   var mathRange = Math.floor(Math.random() * (10 - 1) + 1);
   for (var i = 1; i <= length; i++){
