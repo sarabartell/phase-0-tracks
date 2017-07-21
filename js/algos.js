@@ -26,12 +26,13 @@ function findMatches(hash1,hash2){
     else {
       match = false;
     }
+    console.log(match);
   }
-  console.log(match);
 }
 
-findMatches({name: "Sara", age: 24}, {name: "Sammy", age: 24});
-findMatches({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3});
+findMatches({name: "Sara", age: 25}, {name: "Sam", age: 24});
+
+findMatches({animal: "Dog", legs: 3}, {animal: "Dog", legs: 4});
 
 // return info code
 // console.log(findLongest(["Sara", "Banana","Peanutbutter", "pizza"]));
