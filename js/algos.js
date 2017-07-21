@@ -34,14 +34,17 @@ function randomStrings(x){
   var word = "";
   var strings = [];
   var letters = "ngjdkasignrakfsajgsad";
+  var mathRange = Math.floor(Math.random() * (10 - 1) + 1);
   for (var i = 0; i < x; i++){
     word += letters.charAt(Math.floor(Math.random() * letters.length));
-    strings.push(word);
+      // letters.length)
+    collect = word;
+    strings.push(collect);
   }
   return strings;
 }
 
-console.log(randomStrings(3));
+console.log(randomStrings(6));
 
 // return info code
 // findMatches({name: "Sara", age: 24}, {name: "Sara", age: 25});
