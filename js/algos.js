@@ -30,21 +30,22 @@
 
 // takes interger x as parameter, then takes letter array, and puts it into a new array x times and saves it.
 
-function randomStrings(x){
-  var word = "";
+function randomStrings(length){
   var strings = [];
+  var word = "";
   var letters = "ngjdkasignrakfsajgsad";
   var mathRange = Math.floor(Math.random() * (10 - 1) + 1);
-  for (var i = 0; i < x; i++){
-    word += letters.charAt(Math.floor(Math.random() * letters.length));
-      // letters.length)
-    collect = word;
-    strings.push(collect);
+  for (var i = 1; i <= length; i++){
+    var word = "";
+    for (var t = 0; t < mathRange; t++){
+    word += letters.charAt(Math.floor(Math.random()* letters.length));
+    }
+    strings.push(word);
   }
-  return strings;
+ return strings;
 }
 
-console.log(randomStrings(6));
+console.log(randomStrings(3));
 
 // return info code
 // findMatches({name: "Sara", age: 24}, {name: "Sara", age: 25});
