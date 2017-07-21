@@ -21,13 +21,13 @@
 function findMatches(hash1,hash2){
   for (var value in hash1){
     if (hash1[value] == hash2[value]){
-      true;
+      match = true;
     }
     else {
-      false;
+      match = false;
     }
   }
-  console.log(hash1[value]);
+  console.log(match);
 }
 
 findMatches({name: "Sara", age: 24}, {name: "Sammy", age: 24});
