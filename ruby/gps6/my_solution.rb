@@ -99,3 +99,9 @@ end
 
 #=======================================================================
 # Reflection Section
+
+#there is a hash rocket and a symbol style shown in this hash, they are similar but are called differently with their names when irrirated on
+#require relative gives a specific map or path to a folder that your code needs to pull from. require kinds of assumes that path was already made like being put in the same directory
+# .each, .each_key, you can use while and iuntil looks inside of the each loops
+# that the method was calling on instance variables and calling on two methods that called on instance variables that didnt need to be called since the variables were already readable.
+#refactoring even the smallest steps like an equation in every if/else line
