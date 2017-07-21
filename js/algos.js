@@ -18,24 +18,30 @@
 // }
 
 
-function findMatches(hash1,hash2){
-  var match = false;
-  for (var value in hash1){
-    if (hash1[value] == hash2[value]){
-      var match = true;
-    }
-    // else {
+// function findMatches(hash1,hash2){
+//   var match = false;
+//   for (var value in hash1){
+//     if (hash1[value] == hash2[value]){
+//       var match = true;
+//     }
+//   }
+//   console.log(match);
+// }
 
-    // }
-  }
-  console.log(match);
+// takes interger x as parameter, then takes letter array, and puts it into a new array x times and saves it.
+
+function randomStrings(x){
+  var strings = [];
+  var letters = "ngjdkasignrakfsajg"
+
 }
 
-findMatches({name: "Sara", age: 24}, {name: "Sara", age: 25});
-
-findMatches({animal: "Door", legs: 3}, {animal: "Dog", legs: 4});
-
 // return info code
+// findMatches({name: "Sara", age: 24}, {name: "Sara", age: 25});
+
+// findMatches({animal: "Door", legs: 3}, {animal: "Dog", legs: 4});
+
+
 // console.log(findLongest(["Sara", "Banana","Peanutbutter", "pizza"]));
 
 // console.log(findLongest(["beans","limezzz","edamame","cauliflowers"]));
