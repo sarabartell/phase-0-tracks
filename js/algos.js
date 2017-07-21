@@ -19,20 +19,21 @@
 
 
 function findMatches(hash1,hash2){
+  var match = false;
   for (var value in hash1){
     if (hash1[value] == hash2[value]){
-      match = true;
+      var match = true;
     }
-    else {
-      match = false;
-    }
-    console.log(match);
+    // else {
+
+    // }
   }
+  console.log(match);
 }
 
-findMatches({name: "Sara", age: 25}, {name: "Sam", age: 24});
+findMatches({name: "Sara", age: 24}, {name: "Sara", age: 25});
 
-findMatches({animal: "Dog", legs: 3}, {animal: "Dog", legs: 4});
+findMatches({animal: "Door", legs: 3}, {animal: "Dog", legs: 4});
 
 // return info code
 // console.log(findLongest(["Sara", "Banana","Peanutbutter", "pizza"]));
