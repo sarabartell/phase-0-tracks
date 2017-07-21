@@ -5,25 +5,26 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+#require -- paths the files
+#require_relative -- gives a mapped out path when the computer may not know where the file is
 require_relative 'state_data'
 
 class VirusPredictor
 
+#stores and states the instance variables upon initializion
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+#run the two following methods, predicted_deaths and speed_of_spread
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
-
+#checks the population densitity given as a parameter, and population, and creates a variable for number of deaths based on pop. density, print out how many deaths a state will have in outbreak
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -42,6 +43,7 @@ class VirusPredictor
 
   end
 
+#takes pop density and state, checks the number for density against speed of spread, prints out speed that outbreak will spread at
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -70,6 +72,12 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+#want to loop through every single state in STATE_DATA, to print out the methods
+#need: state name, pop. density, and popultaion
+#will have to call virus effects as well on each state
+STATE_DATA.each do |state_name, state_info|
+
+end
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
