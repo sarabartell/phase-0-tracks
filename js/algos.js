@@ -5,28 +5,28 @@
 //loop through each, during each loop find the phrase at that index, print that and find the phrase length
   // if somehow phrase(1) is longest, print phrase at 1
 
-// function findLongest(longestPhrase){
-//   var largerThan = 0;
+function findLongest(longestPhrase){
+  var largerThan = 0;
 
-//   for(var i = 0; i < longestPhrase.length; i++){
-//       if (longestPhrase[i].length > largerThan){
-//       largerThan = longestPhrase[i].length;
-//       word = longestPhrase[i];
-//     }
-//   }
-//   return word;
-// }
+  for(var i = 0; i < longestPhrase.length; i++){
+      if (longestPhrase[i].length > largerThan){
+      largerThan = longestPhrase[i].length;
+      word = longestPhrase[i];
+    }
+  }
+  return word;
+}
 
 
-// function findMatches(hash1,hash2){
-//   var match = false;
-//   for (var value in hash1){
-//     if (hash1[value] == hash2[value]){
-//       var match = true;
-//     }
-//   }
-//   console.log(match);
-// }
+function findMatches(hash1,hash2){
+  var match = false;
+  for (var value in hash1){
+    if (hash1[value] == hash2[value]){
+      var match = true;
+    }
+  }
+  console.log(match);
+}
 
 // takes interger x as parameter, then takes letter array, and puts it into a new array x times and saves it.
 
@@ -44,17 +44,27 @@ function randomStrings(length){
  return strings;
 }
 
-console.log(randomStrings(3));
 
 // return info code
-// findMatches({name: "Sara", age: 24}, {name: "Sara", age: 25});
-
-// findMatches({animal: "Door", legs: 3}, {animal: "Dog", legs: 4});
 
 
-// console.log(findLongest(["Sara", "Banana","Peanutbutter", "pizza"]));
+function repeat(length){
+  for (var i = 0; i < length; i++){
+    console.log(findLongest(randomStrings(3)));
+  }
+}
 
-// console.log(findLongest(["beans","limezzz","edamame","cauliflowers"]));
+console.log(repeat(10))
 
-// console.log(findLongest(["water","skinny soy latte","t","tea"]));
+
+findMatches({name: "Sara", age: 24}, {name: "Sara", age: 25});
+
+findMatches({animal: "Door", legs: 3}, {animal: "Dog", legs: 4});
+
+
+console.log(findLongest(["Sara", "Banana","Peanutbutter", "pizza"]));
+
+console.log(findLongest(["beans","limezzz","edamame","cauliflowers"]));
+
+console.log(findLongest(["water","skinny soy latte","t","tea"]));
 
