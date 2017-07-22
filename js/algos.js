@@ -33,8 +33,8 @@
 function randomStrings(length){
   var strings = [];
   var letters = "ngjdkasignrakfsajgsad";
-  var mathRange = Math.floor(Math.random() * (10 - 1) + 1);
   for (var i = 1; i <= length; i++){
+    var mathRange = Math.floor(Math.random() * (10 - 1) + 1);
     var word = "";
     for (var t = 0; t < mathRange; t++){
     word += letters.charAt(Math.floor(Math.random()* letters.length));
