@@ -50,8 +50,14 @@ function randomStrings(length){
 
 function repeat(length){
   for (var i = 0; i < length; i++){
-    console.log(findLongest(randomStrings(3)));
+    var results = (randomStrings(3));
+    console.log("Here is the random array:")
+    console.log(results);
+    console.log("Here is the longest phrase:")
+    console.log(findLongest(results));
+    console.log()
   }
+
 }
 
 console.log(repeat(10))
