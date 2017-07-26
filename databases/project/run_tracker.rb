@@ -30,4 +30,23 @@ end
 # add_run(runs, 4, '00:35:05','7/26/2017')
 # remove_run(runs,'7/26/2017')
 #update(runs,'00:42:35',1)
+
 #UI
+puts "--Welcome to Track My Run--"
+puts "Store your runs with the following format:"
+puts "length: 0.0"
+puts "time: 00:00:00 (HR:MIN:SEC)"
+puts "day: MM/DD/YEAR"
+# puts "Would you like to add, remove, or update a run?"
+# function = gets.chomp
+
+puts "Enter run length"
+length = gets.chomp
+
+puts "Enter run time"
+time = gets.chomp
+
+puts "Enter run day"
+day = gets.chomp
+
+# add_run(runs, length, time, day)
