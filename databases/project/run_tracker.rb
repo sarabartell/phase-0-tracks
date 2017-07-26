@@ -74,3 +74,8 @@ if function == "update"
 
   update(runs,time,id)
 end
+
+runs = runs.execute("SELECT * FROM runs")
+runs.each do |runs|
+  puts "You ran a #{runs['length']} run on #{runs['day']}, in #{runs['time']}."
+end
