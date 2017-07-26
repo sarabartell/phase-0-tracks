@@ -63,3 +63,14 @@ if function == "remove"
 
   remove_run(runs,id)
 end
+
+if function == "update"
+
+  puts "Which run number would you like to update?"
+  id = gets.chomp
+
+  puts "What time do you want to change the run to?"
+  time = gets.chomp
+
+  update(runs,time,id)
+end
