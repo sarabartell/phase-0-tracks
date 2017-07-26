@@ -19,8 +19,8 @@ def add_run(runs, length, time, day)
 runs.execute("INSERT INTO runs (length, time, day) VALUES (?, ?, ?)", [length, time, day])
 end
 
-def remove_run(runs,day)
-  runs.execute("DELETE FROM runs WHERE day=(?)", [day])
+def remove_run(runs,id)
+  runs.execute("DELETE FROM runs WHERE id=(?)", [id])
 end
 
 def update(runs,time,id)
@@ -37,16 +37,29 @@ puts "Store your runs with the following format:"
 puts "length: 0.0"
 puts "time: 00:00:00 (HR:MIN:SEC)"
 puts "day: MM/DD/YEAR"
-# puts "Would you like to add, remove, or update a run?"
-# function = gets.chomp
+puts "Would you like to add, remove, or update a run?"
+function = gets.chomp
 
-puts "Enter run length"
-length = gets.chomp
+function = function.downcase
 
-puts "Enter run time"
-time = gets.chomp
+if function == "add"
 
-puts "Enter run day"
-day = gets.chomp
+    puts "Enter run length"
+    length = gets.chomp
 
-# add_run(runs, length, time, day)
+    puts "Enter run time"
+    time = gets.chomp
+
+    puts "Enter run day"
+    day = gets.chomp
+
+    add_run(runs, length, time, day)
+end
+
+if function == "remove"
+
+  puts "Which number run would you like to remove?"
+  id = gets.chomp
+
+  remove_run(runs,id)
+end
