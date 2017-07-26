@@ -1,0 +1,41 @@
+1. Display the information in one table (either table is fine).
+SELECT * FROM movies;
+
+1|Spectre|92|true|3
+2|Mulan|80|false|2
+3|Amelie|85|true|4
+4|Star Wars|94|true|1
+5|Star Trek|82|true|1
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+UPDATE movies SET watched="true" WHERE title="Mulan";
+
+2|Mulan|80|true|2
+
+
+3. Display the information in both tables using one query.
+SELECT * FROM movies, genres WHERE movies.genre_id = genres.genre_id;
+
+1|Spectre|92|true|3|3|Action
+2|Mulan|80|true|2|2|Animated
+3|Amelie|85|true|4|4|Foriegn
+4|Star Wars|94|true|1|1|Sci-fi
+5|Star Trek|82|true|1|1|Sci-fi
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+SELECT movies.title, genres.type FROM movies JOIN genres ON movies.genre_id = genres.genre_id;
+
+Spectre|Action
+Mulan|Animated
+Amelie|Foriegn
+Star Wars|Sci-fi
+
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+DELETE FROM movies
+   ...> WHERE title="Mulan";
+
+1|Spectre|92|true|3
+3|Amelie|85|true|4
+4|Star Wars|94|true|1
+5|Star Trek|82|true|1
