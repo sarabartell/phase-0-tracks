@@ -39,3 +39,23 @@ DELETE FROM movies
 3|Amelie|85|true|4
 4|Star Wars|94|true|1
 5|Star Trek|82|true|1
+
+--other join statements:--
+
+sqlite> SELECT genres.genre_id, movies.title, genres.type
+   ...> FROM genres
+   ...> INNER JOIN movies ON genres.genre_id = movies.genre_id;
+
+3|Spectre|Action
+4|Amelie|Foriegn
+1|Star Wars|Sci-fi
+1|Star Trek|Sci-fi
+
+sqlite> SELECT genres.genre_id, movies.title
+   ...> FROM genres
+   ...> INNER JOIN movies ON genres.genre_id = movies.genre_id;
+
+3|Spectre
+4|Amelie
+1|Star Wars
+1|Star Trek
