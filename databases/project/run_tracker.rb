@@ -6,8 +6,8 @@ create_runs_table = <<-SQL
     CREATE TABLE IF NOT EXISTS runs(
     id INTEGER PRIMARY KEY,
     length INT,
-    time TIME(),
-    day DATE()
+    time INT,
+    day INT
     )
 SQL
 
