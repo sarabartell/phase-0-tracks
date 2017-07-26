@@ -37,10 +37,17 @@ puts "Store your runs with the following format:"
 puts "length: 0.0"
 puts "time: 00:00:00 (HR:MIN:SEC)"
 puts "day: MM/DD/YEAR"
-puts "Would you like to add, remove, or update a run?"
+puts "Would you like to review, add, remove, or update a run?"
 function = gets.chomp
 
 function = function.downcase
+
+if function == "review"
+  runs = runs.execute("SELECT * FROM runs")
+  runs.each do |runs|
+    puts "You ran a #{runs['length']} run on #{runs['day']}, in #{runs['time']}."
+  end
+end
 
 if function == "add"
 
@@ -75,7 +82,7 @@ if function == "update"
   update(runs,time,id)
 end
 
-runs = runs.execute("SELECT * FROM runs")
-runs.each do |runs|
-  puts "You ran a #{runs['length']} run on #{runs['day']}, in #{runs['time']}."
-end
+# runs = runs.execute("SELECT * FROM runs")
+# runs.each do |runs|
+#   puts "You ran a #{runs['length']} run on #{runs['day']}, in #{runs['time']}."
+# end
