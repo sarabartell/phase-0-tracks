@@ -12,14 +12,14 @@ create_runs_table = <<-SQL
     )
 SQL
 
-create_miles_p_month = <<-SQL
-  CREATE TABLE IF NOT EXISTS miles_p_month AS
-  SELECT length, day, time
-  FROM runs;
-SQL
+# create_miles_p_month = <<-SQL
+#   CREATE TABLE IF NOT EXISTS miles_p_month AS
+#   SELECT length, day, time
+#   FROM runs;
+# SQL
 
 runs.execute(create_runs_table)
-runs.execute(create_miles_p_month)
+# runs.execute(create_miles_p_month)
 
 def add_run(runs, length, time, day)
 runs.execute("INSERT INTO runs (length, time, day) VALUES (?, ?, ?)", [length, time, day])
@@ -34,10 +34,12 @@ def update(runs,time,id)
 end
 
 def review(runs)
+  puts "---all runs----"
   runs = runs.execute("SELECT * FROM runs")
     runs.each do |runs|
       puts "#{runs['id']})You ran a #{runs['length']}mile run on #{runs['day']}, in #{runs['time']}."
     end
+    puts "-------"
 end
 
 def avrg_miles(runs)
@@ -47,6 +49,20 @@ def avrg_miles(runs)
     total_runs += runs[1]
   end
   puts "You've run #{total_runs} miles so far!"
+  puts "------"
+end
+
+def find_month(runs,month)
+  total_p_month = 0
+  puts "----#{month.capitalize} milage----"
+  runs = runs.execute("SELECT * FROM runs")
+  runs.each do |runs|
+    split_day = runs[3].split("/")
+       if split_day[0] == month
+         total_p_month += runs[1]
+       end
+  end
+  total_p_month
 end
 
 # add_run(runs, 4, '00:35:05','7/26/2017')
@@ -59,17 +75,33 @@ puts "--Welcome to Track My Run--"
 puts "Store your runs with the following format:"
 puts "length: 0.0"
 puts "time: 00:00:00 (HR:MIN:SEC)"
-puts "day: MM/DD/YEAR"
+puts "day: MONTH/DD/YEAR (JANUARY/04/2017)"
 
 while true
-  puts "Would you like to review, add, remove, or update a run? enter done when finished"
+  puts "Would you like to `review`, `add`, `remove`, or `update` a run? enter `done` when finished"
   function = gets.chomp
 
   function = function.downcase
 
   if function == "review"
-    review(runs)
-    avrg_miles(runs)
+    puts "Enter 'all' to view all runs, or enter 'month' to view by month"
+    type = gets.chomp
+      if type == "all"
+        review(runs)
+        avrg_miles(runs)
+      elsif type == "month"
+        puts "which month do you want to see?"
+        month = gets.chomp
+        #july
+        month = month.upcase
+        #JULY
+        total = find_month(runs,month)
+        if total != 0
+          puts "you ran #{total} miles in #{month.capitalize}!"
+          else
+          puts "you have no miles yet for #{month.capitalize}!"
+        end
+      end
   end
 
   if function == "add"
@@ -109,8 +141,3 @@ while true
     break
   end
 end
-
-# runs = runs.execute("SELECT * FROM runs")
-# runs.each do |runs|
-#   puts "You ran a #{runs['length']} run on #{runs['day']}, in #{runs['time']}."
-# end
