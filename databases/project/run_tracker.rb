@@ -40,9 +40,19 @@ def review(runs)
     end
 end
 
+def avrg_miles(runs)
+  total_runs = 0
+  runs = runs.execute("SELECT * FROM runs")
+  runs.each do |runs|
+    total_runs += runs[1]
+  end
+  puts "You've run #{total_runs} miles so far!"
+end
+
 # add_run(runs, 4, '00:35:05','7/26/2017')
 # remove_run(runs,'7/26/2017')
 #update(runs,'00:42:35',1)
+
 
 #UI
 puts "--Welcome to Track My Run--"
@@ -59,7 +69,7 @@ while true
 
   if function == "review"
     review(runs)
-
+    avrg_miles(runs)
   end
 
   if function == "add"
