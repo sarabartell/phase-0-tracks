@@ -27,6 +27,13 @@ def update(runs,time,id)
   runs.execute("UPDATE runs SET time=(?) WHERE id=(?)", [time], [id])
 end
 
+def review(runs)
+  runs = runs.execute("SELECT * FROM runs")
+    runs.each do |runs|
+      puts "#{runs['id']})You ran a #{runs['length']}mile run on #{runs['day']}, in #{runs['time']}."
+    end
+end
+
 # add_run(runs, 4, '00:35:05','7/26/2017')
 # remove_run(runs,'7/26/2017')
 #update(runs,'00:42:35',1)
@@ -45,10 +52,8 @@ while true
   function = function.downcase
 
   if function == "review"
-    runs = runs.execute("SELECT * FROM runs")
-    runs.each do |runs|
-      puts "#{runs['id']})You ran a #{runs['length']}mile run on #{runs['day']}, in #{runs['time']}."
-    end
+    review(runs)
+
   end
 
   if function == "add"
