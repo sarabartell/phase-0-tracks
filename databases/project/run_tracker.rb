@@ -29,8 +29,16 @@ def remove_run(runs,id)
   runs.execute("DELETE FROM runs WHERE id= ?", [id])
 end
 
-def update(runs,time,id)
+def update_time(runs,time,id)
   runs.execute("UPDATE runs SET time=(?) WHERE id=(?)", [time], [id])
+end
+
+def update_length(runs,length,id)
+  runs.execute("UPDATE runs SET length=(?) WHERE id=(?)", [length], [id])
+end
+
+def update_day(runs,day,id)
+  runs.execute("UPDATE runs SET day=(?) WHERE id=(?)", [day], [id])
 end
 
 def review(runs)
@@ -68,6 +76,7 @@ end
 # add_run(runs, 4, '00:35:05','7/26/2017')
 # remove_run(runs,'7/26/2017')
 #update(runs,'00:42:35',1)
+# update_day(runs,'JANUARY/26/2017',1)
 
 
 #UI
@@ -92,9 +101,7 @@ while true
       elsif type == "month"
         puts "which month do you want to see?"
         month = gets.chomp
-        #july
         month = month.upcase
-        #JULY
         total = find_month(runs,month)
         if total != 0
           puts "you ran #{total} miles in #{month.capitalize}!"
@@ -105,7 +112,6 @@ while true
   end
 
   if function == "add"
-
       puts "Enter run length"
       length = gets.chomp
 
@@ -119,7 +125,6 @@ while true
   end
 
   if function == "remove"
-
     puts "Which number run would you like to remove?"
     id = gets.chomp
 
@@ -127,14 +132,27 @@ while true
   end
 
   if function == "update"
-
-    puts "Which run number would you like to update?"
+    puts "Which entry number would you like to update?"
     id = gets.chomp
 
-    puts "What time do you want to change the run to?"
-    time = gets.chomp
+    puts "Which value would you like to update?"
+    value = gets.chomp
+    if value == "time"
+      puts "Enter new time value:"
+      time = gets.chomp
+      update_time(runs,time,id)
+    end
+    if value == "day"
+      puts "Enter new day value:"
+      day = gets.chomp
+      update_day(runs,day,id)
+    end
+    if value == "length"
+      puts "Enter new length value:"
+      length = gets.chomp
+      update_length(runs,length,id)
+    end
 
-    update(runs,time,id)
   end
 
   if function == "done"
