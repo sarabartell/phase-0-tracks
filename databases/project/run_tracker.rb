@@ -20,7 +20,7 @@ runs.execute("INSERT INTO runs (length, time, day) VALUES (?, ?, ?)", [length, t
 end
 
 def remove_run(runs,id)
-  runs.execute("DELETE FROM runs WHERE id=(?)", [id])
+  runs.execute("DELETE FROM runs WHERE id= ?", [id])
 end
 
 def update(runs,time,id)
