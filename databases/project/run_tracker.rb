@@ -12,8 +12,14 @@ create_runs_table = <<-SQL
     )
 SQL
 
+create_miles_p_month = <<-SQL
+  CREATE TABLE IF NOT EXISTS miles_p_month AS
+  SELECT length, day, time
+  FROM runs;
+SQL
+
 runs.execute(create_runs_table)
-# runs.execute("INSERT INTO runs (length,time,day) VALUES (3.2,'00:40:05','2/4/2017')")
+runs.execute(create_miles_p_month)
 
 def add_run(runs, length, time, day)
 runs.execute("INSERT INTO runs (length, time, day) VALUES (?, ?, ?)", [length, time, day])
