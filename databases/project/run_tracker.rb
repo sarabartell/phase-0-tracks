@@ -37,49 +37,56 @@ puts "Store your runs with the following format:"
 puts "length: 0.0"
 puts "time: 00:00:00 (HR:MIN:SEC)"
 puts "day: MM/DD/YEAR"
-puts "Would you like to review, add, remove, or update a run?"
-function = gets.chomp
 
-function = function.downcase
+while true
+  puts "Would you like to review, add, remove, or update a run? enter done when finished"
+  function = gets.chomp
 
-if function == "review"
-  runs = runs.execute("SELECT * FROM runs")
-  runs.each do |runs|
-    puts "You ran a #{runs['length']} run on #{runs['day']}, in #{runs['time']}."
+  function = function.downcase
+
+  if function == "review"
+    runs = runs.execute("SELECT * FROM runs")
+    runs.each do |runs|
+      puts "#{runs['id']})You ran a #{runs['length']}mile run on #{runs['day']}, in #{runs['time']}."
+    end
   end
-end
 
-if function == "add"
+  if function == "add"
 
-    puts "Enter run length"
-    length = gets.chomp
+      puts "Enter run length"
+      length = gets.chomp
 
-    puts "Enter run time"
+      puts "Enter run time"
+      time = gets.chomp
+
+      puts "Enter run day"
+      day = gets.chomp
+
+      add_run(runs, length, time, day)
+  end
+
+  if function == "remove"
+
+    puts "Which number run would you like to remove?"
+    id = gets.chomp
+
+    remove_run(runs,id)
+  end
+
+  if function == "update"
+
+    puts "Which run number would you like to update?"
+    id = gets.chomp
+
+    puts "What time do you want to change the run to?"
     time = gets.chomp
 
-    puts "Enter run day"
-    day = gets.chomp
+    update(runs,time,id)
+  end
 
-    add_run(runs, length, time, day)
-end
-
-if function == "remove"
-
-  puts "Which number run would you like to remove?"
-  id = gets.chomp
-
-  remove_run(runs,id)
-end
-
-if function == "update"
-
-  puts "Which run number would you like to update?"
-  id = gets.chomp
-
-  puts "What time do you want to change the run to?"
-  time = gets.chomp
-
-  update(runs,time,id)
+  if function == "done"
+    break
+  end
 end
 
 # runs = runs.execute("SELECT * FROM runs")
