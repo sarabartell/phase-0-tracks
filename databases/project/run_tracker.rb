@@ -119,7 +119,9 @@ while true
       time = gets.chomp
 
       puts "Enter run day"
-      day = gets.chomp.split
+      day = gets.chomp.split("/")
+      word = day[0].upcase
+      day = word + "/" + day[1] + "/" + day[2]
 
       add_run(runs, length, time, day)
   end
