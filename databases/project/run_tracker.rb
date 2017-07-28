@@ -119,7 +119,7 @@ while true
       time = gets.chomp
 
       puts "Enter run day"
-      day = gets.chomp
+      day = gets.chomp.split
 
       add_run(runs, length, time, day)
   end
