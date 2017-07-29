@@ -1,0 +1,18 @@
+create ruby program that uses persistent data!
+
+miles ran tracker to let runners store their run, retrieve their past runs, and delete accidental entries
+
+step 1: set up datebase with sqlite3, call runs.db
+create table that contains primary key, run length (in miles), run time, run date
+
+want to execute this creation of the table one time
+
+write a method that takes the runs.db, length, time, date as arguments
+
+write a UI that allows the user to add data
+write a UI that allows user to recall the data (show the full table)
+write a UI that allows user to delete data
+write a UI that allows user to update data
+
+maybe if feeling fancy add another table that also captures the runs by month
+so that user can view with a relational table how many runs they do per month?
