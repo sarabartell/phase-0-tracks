@@ -1,0 +1,5 @@
+1. common https status codes are 200 meaning ok when a page has loaded properly, 404 when a page cannot be found, 500 when there is an internal server error.
+
+2. GET is used when a webpage just needs to retrieve date and viewed, they can be cached. POST is used for submitting data to be processed by a resource, they are not stored or cached or able to bookmark. POST is slightly more secure because the parameters are not stored in the brower history, while GET is an shouldn't be used for sensitive data, like a password.
+
+3. a cookie is stored with the webrowser to track user history and actions, like adding items to a shopping cart or tracking when you are looking up prices for plane tickets and showing personalized information back to the user. It tracks the users long term pattern of using the http request, or it can also track logins to tell a browser whether it should return sesitive information or not.
