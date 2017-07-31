@@ -1,0 +1,3 @@
+1. common https status codes are 200 meaning ok when a page has loaded properly, 404 when a page cannot be found, 500 when there is an internal server error.
+
+2. GET is used when a webpage just needs to retrieve date and viewed, they can be cached. POST is used for submitting data to be processed by a resource, they are not stored or cached or able to bookmark. POST is slightly more secure because the parameters are not stored in the brower history, while GET is an shouldn't be used for sensitive data, like a password.
