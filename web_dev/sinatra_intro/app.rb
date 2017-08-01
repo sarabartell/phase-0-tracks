@@ -10,10 +10,18 @@ get '/address/:address' do
   "Here is your address: #{address}."
 end
 
-get '/address' do
+get '/contact' do
   "Your address is 119 Westhill Drive."
 end
 
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
 
 # write a basic GET route
 # add a query parameter
