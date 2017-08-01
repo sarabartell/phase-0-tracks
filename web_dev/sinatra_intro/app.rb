@@ -5,6 +5,31 @@ require 'sqlite3'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
+get '/address/:address' do
+  address = params[:address]
+  "Here is your address: #{address}."
+end
+
+get '/contact' do
+  "Your address is 119 Westhill Drive."
+end
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+get '/:number_1/add/:number_2' do
+  number_1 = params[:number_1].to_i
+  number_2 = params[:number_2].to_i
+  sum = (number_1 + number_2).to_s
+  "#{number_1} + #{number_2} = #{sum}"
+end
+
 # write a basic GET route
 # add a query parameter
 # GET /
@@ -43,4 +68,26 @@ end
 get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
+end
+
+get '/:campus' do
+  students = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  response = ""
+  students.each do |student|
+
+    response << "ID: #{student['id']}<br>"
+    response << "Name: #{student['name']}<br>"
+    response << "Age: #{student['age']}<br>"
+    response << "Campus: #{student['campus']}<br><br>"
+  end
+  response
+
+  # campus = params[:campus]
+  # location = ""
+  # student.each do |students|
+  #   if students['campus'] == campus
+  #       location << "#{student['name']}, #{student['campus']}"
+  #     end
+  #   end
+  #   location
 end
