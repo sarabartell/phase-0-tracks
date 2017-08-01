@@ -71,7 +71,8 @@ get '/students/:id' do
 end
 
 get '/students/:campus' do
-  student = db.execute("SELECT * FROM students")
+  student = db.execute("SELECT * FROM students WHERE campus=(?)", [params[:campus]])
+
   campus = params[:campus]
   location = ""
   student.each do |students|
