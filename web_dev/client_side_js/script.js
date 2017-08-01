@@ -1,15 +1,13 @@
 console.log("The script is running!");
 
-function hideImage() {
+function hideImage(event) {
 
-  var bookimg = document.getElementById("bookimg");
-
-  if (bookimg.style.visibility === "hidden") {
-    bookimg.style.visibility = "visible";
+  if (event.target.previousElementSibling.style.visibility === "hidden") {
+    event.target.previousElementSibling.style.visibility = "visible";
   } else {
-    bookimg.style.visibility = "hidden";
+    event.target.previousElementSibling.style.visibility = "hidden";
   }
 }
 
-var img = document.getElementById("myBtn");
-img.addEventListener("click", hideImage);
+var button = document.getElementById("myBtn");
+button.addEventListener("click", hideImage);
