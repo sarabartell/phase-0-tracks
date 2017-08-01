@@ -5,6 +5,16 @@ require 'sqlite3'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
+get '/address/:address' do
+  address = params[:address]
+  "Here is your address: #{address}."
+end
+
+get '/address' do
+  "Your address is 119 Westhill Drive."
+end
+
+
 # write a basic GET route
 # add a query parameter
 # GET /
