@@ -23,6 +23,13 @@ get '/great_job' do
   end
 end
 
+get '/:number_1/add/:number_2' do
+  number_1 = params[:number_1].to_i
+  number_2 = params[:number_2].to_i
+  sum = (number_1 + number_2).to_s
+  "#{number_1} + #{number_2} = #{sum}"
+end
+
 # write a basic GET route
 # add a query parameter
 # GET /
