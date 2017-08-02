@@ -13,12 +13,27 @@ get '/' do
   erb :home
 end
 
+get '/campus' do
+  @students = db.execute("SELECT * FROM students")
+  erb :campus_location
+end
+
+get '/campus/view' do
+  erb :view_campus
+end
+
 get '/students/new' do
   erb :new_student
 end
 
 # create new students via
 # a form
+
+post '/campuses' do
+  db.execute("UPDATE students SET campus=? WHERE name=?", [params['name'], params['campus']])
+  redirect '/campus'
+end
+
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
   redirect '/'
