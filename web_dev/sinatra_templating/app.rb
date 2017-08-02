@@ -13,12 +13,12 @@ get '/' do
   erb :home
 end
 
-get '/:campus' do
+get '/campus' do
   @students = db.execute("SELECT * FROM students")
   erb :campus
 end
 
-get '/:campus/view' do
+get '/campus/view' do
   erb :view_campus
 end
 
@@ -29,9 +29,10 @@ end
 # create new students via
 # a form
 
-post '/campus' do
-  db.execute(("SELECT * FROM students WHERE campus=?"), params['campus'] )
-  redirect '/:campus'
+post '/campuses' do
+  p params
+  # db.execute(("SELECT * FROM students WHERE campus=?"), params['campus'] )
+  redirect '/campus'
 
 end
 
