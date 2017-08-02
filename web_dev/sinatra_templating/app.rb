@@ -15,6 +15,7 @@ end
 
 get '/:campus' do
   @students = db.execute("SELECT * FROM students")
+  erb :campus
 end
 
 get '/students/new' do
