@@ -15,7 +15,7 @@ end
 
 get '/campus' do
   @students = db.execute("SELECT * FROM students")
-  erb :campus
+  erb :campus_location
 end
 
 get '/campus/view' do
@@ -30,10 +30,8 @@ end
 # a form
 
 post '/campuses' do
-  p params
-  # db.execute(("SELECT * FROM students WHERE campus=?"), params['campus'] )
+  db.execute("UPDATE students SET campus=? WHERE name=?", [params['name'], params['campus']])
   redirect '/campus'
-
 end
 
 post '/students' do
